@@ -124,7 +124,7 @@ const questions = [
 const resultTypes = {
   admin: {
     title: "운영·행정형",
-    icon: "▤",
+    image: "./assets/role-admin.png",
     summary: "정보를 정리하고 일정과 기준을 맞추는 능력이 강한 유형이에요. 조직이 안정적으로 움직이도록 뒤에서 흐름을 관리하는 역할과 잘 맞을 가능성이 있습니다.",
     strengths: ["문서와 정보를 체계적으로 정리해요", "정해진 절차와 마감을 잘 지켜요", "여러 사람의 일정과 준비물을 챙기는 편이에요"],
     roles: ["인사행정", "재정행정", "작전행정", "보급행정"],
@@ -137,7 +137,7 @@ const resultTypes = {
   },
   tech: {
     title: "기술·통신형",
-    icon: "⌁",
+    image: "./assets/role-tech.png",
     summary: "기기와 시스템의 원리를 이해하고 문제를 논리적으로 해결하는 데 흥미를 느끼는 유형이에요. 통신·네트워크·정보체계처럼 기술을 다루는 역할부터 살펴보세요.",
     strengths: ["오류의 원인을 단계적으로 찾아요", "새로운 장비와 프로그램을 익히는 데 거부감이 적어요", "정확한 연결과 점검 업무에 집중할 수 있어요"],
     roles: ["전술통신", "네트워크 운용", "위성통신", "정보체계 지원"],
@@ -150,7 +150,7 @@ const resultTypes = {
   },
   mobility: {
     title: "기동·장비형",
-    icon: "◉",
+    image: "./assets/role-mobility.png",
     summary: "직접 움직이며 차량과 장비를 다루는 일에 관심이 많은 유형이에요. 운전·수송·구난처럼 기동과 장비 관리가 함께 필요한 역할을 우선 비교해보세요.",
     strengths: ["공간과 이동 경로를 빠르게 파악해요", "장비 상태를 반복해서 점검할 수 있어요", "현장에서 필요한 일을 직접 처리하는 편이에요"],
     roles: ["차량운전", "수송", "구난", "장비 운용·정비"],
@@ -163,7 +163,7 @@ const resultTypes = {
   },
   field: {
     title: "현장·실행형",
-    icon: "▲",
+    image: "./assets/role-field.png",
     summary: "몸을 움직이며 현장에서 빠르게 판단하고 실행하는 상황에 강한 유형이에요. 보병·소총수부터 수색·해병대 등 체력과 팀워크 비중이 높은 역할을 차근차근 살펴보세요.",
     strengths: ["변화가 있는 환경에 빠르게 적응해요", "시범을 보고 몸으로 익히는 데 강해요", "목표가 분명하면 끝까지 실행하는 편이에요"],
     roles: ["소총수", "보병", "해병대 계열", "특전 관련 경로"],
@@ -176,7 +176,7 @@ const resultTypes = {
   },
   leader: {
     title: "교육·리더십형",
-    icon: "✦",
+    image: "./assets/role-leadership.png",
     summary: "사람들에게 설명하고 진행 상황을 챙기며 팀의 방향을 맞추는 데 강한 유형이에요. 교육지원·조교 역할과 장기적으로는 간부 경로도 함께 살펴볼 수 있습니다.",
     strengths: ["상대방이 이해할 때까지 설명하는 편이에요", "팀의 분위기와 진행 상황을 빠르게 파악해요", "책임을 맡았을 때 기준을 세우고 이끌 수 있어요"],
     roles: ["훈련소 조교", "교육지원", "인원관리", "부사관·장교 경로"],
@@ -252,7 +252,9 @@ function renderResult() {
   const result = resultTypes[key];
   document.querySelector("#result-title").textContent = result.title;
   document.querySelector("#result-summary").textContent = result.summary;
-  document.querySelector("#result-icon").textContent = result.icon;
+  const resultImage = document.querySelector("#result-image");
+  resultImage.src = result.image;
+  resultImage.alt = `${result.title}을 상징하는 2D 군인 일러스트`;
   document.querySelector("#strength-list").innerHTML = result.strengths.map((item) => `<li>${item}</li>`).join("");
   document.querySelector("#role-chips").innerHTML = result.roles.map((item) => `<span>${item}</span>`).join("");
   document.querySelector("#result-caution").textContent = result.caution;
