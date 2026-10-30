@@ -131,6 +131,14 @@ h1 em { color: var(--orange-dark); font-style: normal; }
 .ghost-button { color: #fff; background: rgba(16,39,31,.54); border: 1px solid rgba(255,255,255,.28); }
 .share-status { min-height: 22px; margin: 10px 0 0; color: #fff; text-align: center; font-size: 14px; }
 
+.adfit-section {
+  display: flex;
+  justify-content: center;
+  min-height: 50px;
+  margin: 26px auto 0;
+  overflow: hidden;
+}
+
 footer { display: flex; justify-content: space-between; gap: 16px; padding: 24px 8px 0; color: rgba(255,255,255,.68); }
 footer p { margin: 0; font-size: 14px; }
 
