@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#17382b" />
+    <title>나에게 맞는 군생활 역할 유형 테스트</title>
+    <meta name="description" content="12문항으로 알아보는 나의 군생활 역할 유형. 운영·행정형, 기술·통신형, 기동·장비형, 현장·실행형, 교육·리더십형 중 나와 가까운 유형을 확인해보세요." />
+    <link rel="canonical" href="https://leejinho970715-star.github.io/R.O.K.A_test/" />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="./site.webmanifest" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:title" content="나에게 맞는 군생활 역할 유형 테스트" />
+    <meta property="og:description" content="12문항으로 알아보는 나의 군생활 역할" />
+    <meta property="og:url" content="https://leejinho970715-star.github.io/R.O.K.A_test/" />
+    <meta property="og:image" content="https://leejinho970715-star.github.io/R.O.K.A_test/assets/og-image.png" />
+    <meta property="og:image:width" content="1731" />
+    <meta property="og:image:height" content="909" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="나에게 맞는 군생활 역할 유형 테스트" />
+    <meta name="twitter:description" content="12문항으로 알아보는 나의 군생활 역할" />
+    <meta name="twitter:image" content="https://leejinho970715-star.github.io/R.O.K.A_test/assets/og-image.png" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header" aria-label="사이트 헤더">
+        <a class="brand" href="./" aria-label="군생활 설계소 홈">
+          <span class="brand-mark" aria-hidden="true">✦</span>
+          <span>군생활 설계소</span>
+        </a>
+        <a class="blog-link" href="https://blog.naver.com/eungyulee_97" target="_blank" rel="noopener noreferrer">일과 삶의 디자인 ↗</a>
+      </header>
+
+      <main>
+        <section id="intro" class="screen intro-screen is-active" aria-labelledby="intro-title">
+          <div class="hero-copy">
+            <span class="eyebrow">MILITARY ROLE FINDER</span>
+            <h1 id="intro-title">나에게 맞는<br /><em>군생활 역할 유형</em>은?</h1>
+            <p class="hero-description">일하는 방식, 관심 분야, 체력 활동과 협업 성향을 바탕으로 나와 가까운 군생활 역할을 가볍게 탐색해보세요.</p>
+            <div class="hero-meta" aria-label="테스트 정보">
+              <span>12문항</span><span>약 2분</span><span>5가지 역할 유형</span>
+            </div>
+            <button id="start-button" class="primary-button" type="button">테스트 시작하기 <span aria-hidden="true">→</span></button>
+            <p class="micro-copy">로그인 없이 이용하며, 답변은 서버에 저장하지 않습니다.</p>
+          </div>
+          <div class="hero-visual" aria-hidden="true">
+            <div class="radar-ring ring-one"></div>
+            <div class="radar-ring ring-two"></div>
+            <img src="./assets/soldier-guide.png" alt="" />
+            <span class="floating-tag tag-one">보직 탐색</span>
+            <span class="floating-tag tag-two">역할 유형</span>
+          </div>
+        </section>
+
+        <section id="quiz" class="screen quiz-screen" aria-live="polite" aria-labelledby="question-title">
+          <div class="quiz-topline">
+            <button id="back-button" class="icon-button" type="button" aria-label="이전 질문">←</button>
+            <div class="progress-area">
+              <div class="progress-label"><span id="progress-text">1 / 12</span><span id="progress-percent">8%</span></div>
+              <div class="progress-track" role="progressbar" aria-valuemin="1" aria-valuemax="12" aria-valuenow="1"><span id="progress-bar"></span></div>
+            </div>
+          </div>
+          <div class="question-card">
+            <span id="question-kicker" class="question-kicker">QUESTION 01</span>
+            <h2 id="question-title"></h2>
+            <p id="question-help" class="question-help"></p>
+            <div id="answer-list" class="answer-list" role="group" aria-labelledby="question-title"></div>
+          </div>
+        </section>
+
+        <section id="result" class="screen result-screen" aria-live="polite" aria-labelledby="result-title">
+          <div class="result-heading">
+            <span class="eyebrow">MY ROLE TYPE</span>
+            <p class="result-pretitle">나와 가장 가까운 군생활 역할은</p>
+            <h2 id="result-title"></h2>
+            <p id="result-summary" class="result-summary"></p>
+          </div>
+
+          <div class="result-grid">
+            <article class="result-card accent-card">
+              <div id="result-icon" class="result-icon" aria-hidden="true"></div>
+              <h3>나의 강점</h3>
+              <ul id="strength-list" class="check-list"></ul>
+            </article>
+            <article class="result-card">
+              <h3>살펴볼 역할군</h3>
+              <div id="role-chips" class="role-chips"></div>
+              <p id="result-caution" class="card-note"></p>
+            </article>
+          </div>
+
+          <article class="next-step-card">
+            <div>
+              <span class="section-number">01</span>
+              <h3>다음으로 읽어볼 글</h3>
+              <p>유형과 연결되는 보직의 실제 역할과 지원 조건을 확인해보세요.</p>
+            </div>
+            <div id="article-links" class="article-links"></div>
+          </article>
+
+          <article class="official-card">
+            <div class="official-copy">
+              <span class="section-number">02</span>
+              <div>
+                <h3>지원 가능 여부는 공식 서비스에서 확인하세요</h3>
+                <p>이 테스트는 진로 탐색용이며 실제 보직·군사특기·부대 배치를 보장하지 않습니다. 전공·자격·신체조건과 최신 모집계획은 병무청에서 확인해야 해요.</p>
+              </div>
+            </div>
+            <a class="secondary-button" href="https://www.mma.go.kr/contents.do?mc=mma0002535" target="_blank" rel="noopener noreferrer">병역진로설계 확인 ↗</a>
+          </article>
+
+          <div class="result-actions">
+            <button id="share-button" class="primary-button" type="button">결과 공유하기</button>
+            <button id="restart-button" class="ghost-button" type="button">다시 테스트하기</button>
+          </div>
+          <p id="share-status" class="share-status" role="status"></p>
+        </section>
+      </main>
+
+      <footer>
+        <p>군생활 설계소 · 일과 삶의 디자인</p>
+        <p>본 테스트는 정보 탐색을 돕는 콘텐츠이며 공식 선발·배치 결과와 다를 수 있습니다.</p>
+      </footer>
+    </div>
+    <script src="./app.js" defer></script>
+  </body>
+</html>

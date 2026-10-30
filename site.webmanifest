@@ -1,0 +1,11 @@
+{
+  "name": "나에게 맞는 군생활 역할 유형 테스트",
+  "short_name": "군생활 역할 테스트",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f7f2e8",
+  "theme_color": "#17382b",
+  "icons": [
+    { "src": "./favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
